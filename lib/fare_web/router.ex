@@ -15,10 +15,22 @@ defmodule FareWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   scope "/" do
     pipe_through :browser
 
     pow_routes()
+  end
+
+  scope "/", FareWeb do
+    pipe_through [:browser, :protected]
+
+    # Add your protected routes here
+    resources "/tasks", TaskController
   end
 
   scope "/", FareWeb do
