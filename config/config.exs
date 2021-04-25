@@ -18,10 +18,6 @@ config :fare, FareWeb.Endpoint,
   pubsub_server: Fare.PubSub,
   live_view: [signing_salt: "aEoWxk40"]
 
-config :fare, :pow,
-  user: Fare.Users.User,
-  repo: Fare.Repo
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -29,6 +25,14 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# config for pow - user authentication
+config :fare, :pow,
+  user: Fare.Users.User,
+  repo: Fare.Repo,
+  web_module: FareWeb,
+  extensions: [PowResetPassword, PowEmailConfirmation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
