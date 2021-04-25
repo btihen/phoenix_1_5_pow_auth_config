@@ -18,6 +18,10 @@ config :fare, FareWeb.Endpoint,
   pubsub_server: Fare.PubSub,
   live_view: [signing_salt: "aEoWxk40"]
 
+config :fare, :pow,
+  user: Fare.Users.User,
+  repo: Fare.Repo
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
