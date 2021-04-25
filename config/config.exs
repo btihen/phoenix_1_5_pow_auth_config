@@ -31,6 +31,8 @@ config :fare, :pow,
   user: Fare.Users.User,
   repo: Fare.Repo,
   web_module: FareWeb,
+  web_mailer_module: FareWeb,
+  mailer_backend: FareWeb.Pow.Mailer,
   extensions: [PowResetPassword, PowEmailConfirmation],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
 
