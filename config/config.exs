@@ -33,6 +33,7 @@ config :fare, :pow,
   web_module: FareWeb,
   web_mailer_module: FareWeb,
   mailer_backend: FareWeb.Pow.Mailer,
+  routes_backend: FareWeb.Pow.Routes,
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   extensions: [PowPersistentSession, PowResetPassword, PowEmailConfirmation]
 
