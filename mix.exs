@@ -47,7 +47,10 @@ defmodule Fare.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:pow, "~> 1.0"}
+      {:pow, "~> 1.0"},            # Phoenix Local Authorization
+      {:pow_assent, "~> 0.4.10"},  # Phoenix third party authentication
+      {:certifi, "~> 2.4"},        # Optional/Recommended - SSL with OAuth - validats :httpc adapter
+      {:ssl_verify_fun, "~> 1.1"}, # Optional/Recommended - SSL with OAuth
     ]
   end
 
