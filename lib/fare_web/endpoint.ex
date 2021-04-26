@@ -50,6 +50,9 @@ defmodule FareWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  # enable Pow session based authentication
   plug Pow.Plug.Session, otp_app: :fare
+  # enable Pow persistent sessions
+  plug PowPersistentSession.Plug.Cookie
   plug FareWeb.Router
 end

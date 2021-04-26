@@ -33,8 +33,8 @@ config :fare, :pow,
   web_module: FareWeb,
   web_mailer_module: FareWeb,
   mailer_backend: FareWeb.Pow.Mailer,
-  extensions: [PowResetPassword, PowEmailConfirmation],
-  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  extensions: [PowPersistentSession, PowResetPassword, PowEmailConfirmation]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
