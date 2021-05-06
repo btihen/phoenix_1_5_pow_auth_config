@@ -51,6 +51,8 @@ defmodule Fare.MixProject do
       {:pow_assent, "~> 0.4.10"},  # Phoenix third party authentication
       {:certifi, "~> 2.4"},        # Optional/Recommended - SSL with OAuth - validats :httpc adapter
       {:ssl_verify_fun, "~> 1.1"}, # Optional/Recommended - SSL with OAuth
+      {:bamboo, "~> 2.1.0"},         # send emails from Phoenix
+      {:bamboo_smtp, "~> 4.0"}
     ]
   end
 

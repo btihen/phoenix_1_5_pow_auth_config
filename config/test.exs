@@ -18,5 +18,9 @@ config :fare, FareWeb.Endpoint,
   http: [port: 4002],
   server: false
 
+# Allow Tests of Pow Mails
+config :my_app, FareWeb.Pow.Mailer,
+  adapter: Bamboo.TestAdapter
+
 # Print only warnings and errors during test
 config :logger, level: :warn

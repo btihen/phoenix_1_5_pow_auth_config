@@ -66,6 +66,35 @@ config :fare, FareWeb.Endpoint,
     ]
   ]
 
+# # config email sending
+# # With Bamboo.Localhost - also config routes with:
+# # if Mix.env == :dev do
+# #   forward "/sent_emails", Bamboo.EmailPreviewPlug
+# # end
+config :fare, FareWeb.Pow.Mailer,
+  adapter: Bamboo.LocalAdapter
+
+# # with Bamboo SMTP & mailhog - similar to dev env
+# # - you can send emails to `localhost:1025`
+# # and read sent emails at: `http:localhost:8025`
+# http://localhost:8025
+# # https://mailcatcher.me/ or https://github.com/mailhog/MailHog
+# # all adapters are listed here: https://hexdocs.pm/bamboo/readme.html#available-adapters
+# config :fare, FareWeb.Pow.Mailer,
+#   adapter: Bamboo.SMTPAdapter,
+#   server: "localhost",
+#   port: 1025
+
+# best when configured in config/production.secret.exs or config/development.secret.exx
+# config :fare, :pow_assent,
+#   providers: [
+#     github: [
+#       client_id: Application.get_env(:fare, :github_client_id),
+#       client_secret: Application.get_env(:fare, :github_client_secret),
+#       strategy: Assent.Strategy.Github
+#     ]
+#   ]
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
